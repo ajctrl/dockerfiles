@@ -24,7 +24,7 @@ pgbackups3:
   links:
     - postgres
   environment:
-    SCHEDULE: '@daily'
+    SCHEDULE: '0 0 * * *'
     S3_REGION: region
     S3_ACCESS_KEY_ID: key
     S3_SECRET_ACCESS_KEY: secret
@@ -40,7 +40,7 @@ pgbackups3:
 
 ### Automatic Periodic Backups
 
-You can additionally set the `SCHEDULE` environment variable like `-e SCHEDULE="@daily"` to run the backup automatically.
+You can additionally set the `SCHEDULE` environment variable like `-e SCHEDULE="0 0 * * *"` to run the backup automatically.
 
 More information about the scheduling can be found [here](http://godoc.org/github.com/robfig/cron#hdr-Predefined_schedules).
 
